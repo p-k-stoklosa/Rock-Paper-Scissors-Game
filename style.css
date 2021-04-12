@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.ai-wins,
+.ai-side {
+    width: 40%;
+}
+
+.ai-quote {
+    height: 10vh;
+}
+
+.ai-picture img {
+    transform: scaleX(-1);
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    border: solid 1px black;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 30px;
+    border: none;
+    background-color: crimson;
+    color: white;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover {
+    background-color: rgb(190, 18, 53);
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 25px;
+}
+
+.choice {
+    display: flex;
+    text-align: center;
+}
+
+.fa-hand-paper,
+.fa-hand-rock {
+    transform: rotate(90deg);
+}
+
+.fa-hand-scissors {
+    transform: scaleX(-1);
+}
+
+img {
+    width: 80%;
+    height: auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.player-wins,
+.player-side {
+    width: 40%;
+}
+
+.player-picture,
+.ai-picture {
+    font-size: 200px;
+}
+
+.player-picture img {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    border: solid 1px black;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.panel,
+.ties {
+    width: 20%;
+}
+
+.round {
+    text-align: center;
+    margin: 40px auto;
+    color: crimson;
+}
+
+.results {
+    display: flex;
+    text-align: center;
+}
+
+.text-choice {
+    margin-top: 20px;
+    height: 15vh;
+}
+
+.txt-result {
+    padding: 10px;
+}
+
+.winner {
+    padding: 10px;
+    border-bottom: solid 1px black;
+}

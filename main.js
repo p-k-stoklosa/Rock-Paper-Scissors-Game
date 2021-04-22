@@ -59,8 +59,8 @@ const printResult = () => {
     playerResult.textContent = gameResult.playerWin;
     tiesResults.textContent = gameResult.ties;
     roundResult.textContent = `ROUND ${gameResult.roundNumber}`;
-    playerHand.setAttribute('src', `/pictures/picture-${values.playerChoice}.png`);
-    aiHand.setAttribute('src', `/pictures/picture-${values.aiChoice}.png`);
+    playerHand.setAttribute('src', `pictures/picture-${values.playerChoice}.png`);
+    aiHand.setAttribute('src', `pictures/picture-${values.aiChoice}.png`);
     textResult.textContent = `${(values.playerChoice).toUpperCase()} vs. ${(values.aiChoice).toUpperCase()}`;
     textWinner.textContent = `${gameResult.whoWin.toUpperCase()} !`;
     if (gameResult.whoWin === 'player') {

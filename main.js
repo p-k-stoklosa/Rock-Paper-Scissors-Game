@@ -30,13 +30,26 @@ const values = {
 }
 
 const aiChoice = () => {
-    let choiceNumber = Math.floor((Math.random() * 3) + 1);
-    if (choiceNumber === 1) {
-        return 'paper';
-    } else if (choiceNumber === 2) {
-        return 'scissors';
-    } else if (choiceNumber === 3) {
-        return 'rock';
+    let choiceNumber = "";
+    if (gameResult.whoWin === "" || gameResult.whoWin === "nobody") {
+        choiceNumber = Math.floor((Math.random() * 3) + 1);
+        if (choiceNumber === 1) {
+            return 'paper';
+        } else if (choiceNumber === 2) {
+            return 'scissors';
+        } else if (choiceNumber === 3) {
+            return 'rock';
+        }
+    } else if (gameResult.whoWin === "player") {
+        if (values.playerChoice === "paper" && values.aiChoice === "rock" || values.playerChoice === "rock" && values.aiChoice === "paper") {
+            return 'scissors';
+        } else if (values.playerChoice === "rock" && values.aiChoice === "scissors" || values.playerChoice === "scissors" && values.aiChoice === "rock") {
+            return 'paper';
+        } else if (values.playerChoice === "scissors" && values.aiChoice === "paper" || values.playerChoice === "paper" && values.aiChoice === "scissors") {
+            return 'rock';
+        }
+    } else if (gameResult.whoWin === "ai") {
+        return values.aiChoice;
     }
 }
 
@@ -73,8 +86,8 @@ const printResult = () => {
 }
 
 const game = (selectedOption) => {
-    values.playerChoice = selectedOption;
     values.aiChoice = aiChoice();
+    values.playerChoice = selectedOption;
     gameResult.roundNumber++;
     result();
 }

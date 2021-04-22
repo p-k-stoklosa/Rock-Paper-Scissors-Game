@@ -17,7 +17,7 @@ body {
 }
 
 .ai-quote {
-    height: 10vh;
+    height: 100px;
 }
 
 .ai-picture img {
@@ -120,7 +120,7 @@ img {
 }
 
 .text-choice {
-    margin-top: 20px;
+    margin: 20px 0px;
     height: 15vh;
 }
 
@@ -131,4 +131,47 @@ img {
 .winner {
     padding: 10px;
     border-bottom: solid 1px black;
+}
+
+@media screen and (max-width: 1200px) {
+    .button {
+        width: 30px;
+        height: 30px;
+    }
+
+    .choice {
+        flex-wrap: wrap;
+    }
+
+    .container {
+        margin: 0px auto;
+        padding: 10px 0px;
+    }
+
+    .player-side,
+    .ai-side {
+        order: -1;
+        width: 50%;
+    }
+
+    .panel {
+        width: 80%;
+        margin: 0% 10%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .round {
+        margin: 10px auto;
+    }
+
+    .panel {
+        position: absolute;
+        top: 450px;
+        z-index: -1;
+    }
+
+    .ai-quote {
+        margin-top: 50px;
+    }
 }
